@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_finance/Pages/HomePage.dart';
 import 'package:personal_finance/Pages/SummaryChartsPage.dart';
-import 'package:personal_finance/Widgets/SummaryChart.dart';
 
 import 'Widgets/AppColors.dart';
 import 'Widgets/AppDrawer.dart';

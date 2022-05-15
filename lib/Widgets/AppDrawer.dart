@@ -44,7 +44,6 @@ class _AppDrawerState extends State<AppDrawer> {
             ),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
             const Divider(height: 40),
-            Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
             AppText(text: 'Summary Graph'),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
             AppText(text: 'Detailed Graph'),
