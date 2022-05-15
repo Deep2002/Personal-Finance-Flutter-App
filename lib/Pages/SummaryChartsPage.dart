@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:personal_finance/widgets/AppColors.dart';
 import 'package:personal_finance/widgets/AppText.dart';
 import 'package:personal_finance/widgets/SummaryChart.dart';
+
+import '../Widgets/RecentChangesGraph.dart';
 
 class SummaryChartsPage extends StatefulWidget {
   const SummaryChartsPage({Key? key}) : super(key: key);
@@ -41,25 +42,6 @@ class _SummaryChartsPageState extends State<SummaryChartsPage> {
                 ),
               ],
             ),
-            // actions: [
-            //   ButtonBar(
-            //     children: [
-            //       GestureDetector(
-            //         onTap: () {
-            //           Navigator.canPop(context)
-            //               ? Navigator.of(context).pop()
-            //               : print('Can not pop!');
-            //         },
-            //         child: const Icon(
-            //           Icons.swipe_left_alt_sharp,
-            //           size: 30,
-            //           color: Color.fromARGB(255, 197, 197, 197),
-            //         ),
-            //       ),
-            //       const SizedBox(width: 10),
-            //     ],
-            //   ),
-            // ],
           ),
           SliverToBoxAdapter(
             child: Padding(
@@ -71,11 +53,11 @@ class _SummaryChartsPageState extends State<SummaryChartsPage> {
                   children: [
                     const SizedBox(height: 40),
                     AppText(
-                      text: "Month Summary",
+                      text: 'Month Summary',
                       style: const TextStyle(
-                        color: Color.fromARGB(255, 218, 218, 218),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
+                        color: Color.fromARGB(255, 132, 132, 132),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -97,7 +79,7 @@ class _SummaryChartsPageState extends State<SummaryChartsPage> {
                         backgroundColor: MaterialStateProperty.all<Color>(
                             AppColors.buttonBlue),
                         fixedSize: MaterialStateProperty.all<Size>(
-                            const Size(290, 40)),
+                            const Size(340, 40)),
                         textStyle: MaterialStateProperty.all<TextStyle>(
                           const TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -111,16 +93,69 @@ class _SummaryChartsPageState extends State<SummaryChartsPage> {
                               borderRadius: BorderRadius.circular(12)),
                         ),
                       ),
-                    )
+                    ),
+                    const SizedBox(
+                      height: 65,
+                    ),
+                    AppText(
+                      text: 'Recent Changes',
+                      style: const TextStyle(
+                        color: Color.fromARGB(255, 132, 132, 132),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    const RecentChangesGraph(),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    const Icon(
+                      Icons.info_outline,
+                      color: Colors.grey,
+                    ),
+                    const Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                      child: Text(
+                        'The above graph show\'s the recent day\'s activities. This graph will go up if the deposit has been made and goes down if the payment has been made. The graph will only show the approximate values, to see the actual value hold on dots.',
+                        style: TextStyle(
+                            color: Colors.grey, fontWeight: FontWeight.w200),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('VIEW DETAILED GRAPH'),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color.fromRGBO(99, 99, 99, 1)),
+                        fixedSize: MaterialStateProperty.all<Size>(
+                            const Size(340, 40)),
+                        textStyle: MaterialStateProperty.all<TextStyle>(
+                          const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        shadowColor:
+                            MaterialStateProperty.all<Color>(Colors.black),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(42),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
-                      color: AppColors.buttonGreen,
+                      color: Colors.transparent,
                       blurRadius: 5,
-                      offset: const Offset(0, -1),
+                      offset: Offset(0, -1),
                     ),
                   ],
                   color: const Color(0xff222121),

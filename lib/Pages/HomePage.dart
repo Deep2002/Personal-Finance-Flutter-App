@@ -12,14 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedPageIndex = 0;
-
-  void _onPageChange(int selectedPage) {
-    setState(() {
-      _selectedPageIndex = selectedPage;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
