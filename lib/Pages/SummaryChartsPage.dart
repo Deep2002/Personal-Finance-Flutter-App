@@ -120,7 +120,7 @@ class _SummaryChartsPageState extends State<SummaryChartsPage> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                       child: Text(
-                        'The above graph show\'s the recent day\'s activities. This graph will go up if the deposit has been made and goes down if the payment has been made. The graph will only show the approximate values, to see the actual value hold on dots.',
+                        'The above graph show\'s the recent day\'s activities. This graph will go up or down if the deposit or payment has been made. The graph will only show the approximate values, to see the actual value hold on dots.',
                         style: TextStyle(
                             color: Colors.grey, fontWeight: FontWeight.w200),
                         textAlign: TextAlign.left,
@@ -129,7 +129,7 @@ class _SummaryChartsPageState extends State<SummaryChartsPage> {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {},
-                      child: const Text('VIEW DETAILED GRAPH'),
+                      child: const Text('PRINT MONTH REPORT'),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             const Color.fromRGBO(99, 99, 99, 1)),
