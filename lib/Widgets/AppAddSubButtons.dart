@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:personal_finance/Pages/SubPage.dart';
 
+import '../Pages/AddPage.dart';
 import 'AppColors.dart';
 
 class AppAddSubButtons extends StatefulWidget {
@@ -21,7 +23,27 @@ class _AppAddSubButtonsState extends State<AppAddSubButtons> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  print("Click");
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      maintainState: true,
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const AddPage(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(0.0, 1.0);
+                        const end = Offset.zero;
+                        const curve = Curves.ease;
+
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+
+                        return SlideTransition(
+                          position: animation.drive(tween),
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
                 },
                 child: const Text(
                   'ADD',
@@ -43,7 +65,27 @@ class _AppAddSubButtonsState extends State<AppAddSubButtons> {
               const SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () {
-                  print("Click");
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      maintainState: true,
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const SubPage(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(0.0, 1.0);
+                        const end = Offset.zero;
+                        const curve = Curves.ease;
+
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+
+                        return SlideTransition(
+                          position: animation.drive(tween),
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
                 },
                 child: const Text(
                   'SUBTRACT',
