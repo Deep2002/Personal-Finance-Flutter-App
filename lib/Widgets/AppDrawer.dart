@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:personal_finance/Widgets/DrawerItem.dart';
 
 import 'AppColors.dart';
-import 'AppText.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -18,43 +18,52 @@ class _AppDrawerState extends State<AppDrawer> {
           borderRadius: BorderRadius.horizontal(right: Radius.circular(30))),
       backgroundColor: AppColors.bg,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 40),
+        padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Divider(height: 40),
+            const DrawerItem(
+                text: 'Profile',
+                icon: Icon(Icons.person),
+                iconColor: Colors.blue),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
-            Row(
-              children: [
-                const Icon(Icons.person, color: Colors.white),
-                const SizedBox(
-                  width: 20,
-                ),
-                AppText(text: 'Profile'),
-              ],
-            ),
+            const DrawerItem(
+                text: 'Setting',
+                icon: Icon(Icons.settings, color: Colors.grey),
+                iconColor: Colors.grey),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
-            Row(
-              children: [
-                const Icon(Icons.logout, color: Colors.white),
-                const SizedBox(
-                  width: 20,
-                ),
-                AppText(text: 'Logout'),
-              ],
-            ),
+            const DrawerItem(
+                text: 'Logout',
+                icon: Icon(Icons.logout),
+                iconColor: Colors.redAccent),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
             const Divider(height: 40),
-            AppText(text: 'Summary Graph'),
+            const DrawerItem(
+                text: 'Home page',
+                icon: Icon(Icons.home_rounded),
+                iconColor: Colors.blue),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
-            AppText(text: 'Detailed Graph'),
+            const DrawerItem(
+                text: 'Summary chart',
+                icon: Icon(Icons.data_usage_rounded),
+                iconColor: Colors.green),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
-            AppText(text: 'Finance Statement'),
+            const DrawerItem(
+                text: 'Detailed graph',
+                icon: Icon(Icons.bar_chart_rounded),
+                iconColor: Color.fromARGB(255, 243, 191, 33)),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
-            AppText(text: 'Print this month report'),
+            const DrawerItem(
+                text: 'My statement',
+                icon: Icon(Icons.request_page_outlined),
+                iconColor: Colors.orange),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
-            AppText(text: 'Print all time reports'),
-            Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
-            AppText(text: 'Print finance statement'),
+            const Divider(height: 40),
+            const DrawerItem(
+                text: 'Print reports',
+                icon: Icon(Icons.print),
+                iconColor: Colors.grey),
             Divider(color: AppColors.containerFrame, thickness: 2, height: 40),
           ],
         ),
